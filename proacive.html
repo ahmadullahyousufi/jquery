@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .bg-success{
+        background:green;
+      }
+    </style>
+</head>
+<body>
+  <p id="firstp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, perferendis ipsam dignissimos eius voluptas aut dolor eligendi nisi nobis provident! Enim quos repellat provident, dolore aperiam voluptatum similique ea aut.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi perferendis earum ut ullam tempore, odit quaerat enim ratione voluptatibus alias itaque accusamus? Quisquam facere odit cupiditate veritatis suscipit quaerat sed.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, culpa! Sed quo, excepturi exercitationem ullam nostrum itaque deleniti nesciunt velit ipsa officiis, iusto distinctio magnam voluptatum laborum libero necessitatibus ratione.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere laudantium temporibus adipisci ducimus veniam atque. Possimus officiis vero enim, libero et voluptas exercitationem, quidem maxime tenetur quasi nesciunt dolorum. Officiis.
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, deleniti aperiam amet, cumque porro enim incidunt odit dolorum architecto fugiat, consequuntur inventore! Dolor sunt beatae deleniti alias obcaecati voluptatem voluptatibus.
+  </p>
+  <button id="hide">hide</button>
+  <button id="show">show</button>
+  <button id="toggle">Toggle</button>
+  <button id="up">slide UP</button>
+  <button id="down">slide down</button>
+  <button id="updown">Toggle slide up and down</button>
+  <button id="color">Change color</button>
+  <button id="html">Change the text</button>
+  <button id="addclass">AddClass</button>
+  <button id="removeclass">RemoveClass</button>
+  <button id="append">Append</button>
+  <button id="prepend">Prepend</button>
+    <script src="jquery-1.9.1.min.js"> </script>
+    <script>
+      $('document').ready(()=>{
+        //hide and show
+       $('#hide').click(function(){
+           $('#firstp').hide('slow');
+       })
+       $('#show').click(function(){
+           $('#firstp').show('slow');
+       })
+       $('#toggle').click(function(){
+           $('#firstp').toggle('slow');
+       })
+       // slide up and down
+       $('#up').click(function(){
+           $('#firstp').slideUp('slow');
+       })
+       $('#down').click(function(){
+           $('#firstp').slideDown('slow');
+       })
+       $('#updown').click(function(){
+           $('#firstp').slideToggle('slow');
+       })
+       // change css
+       $('#color').click(function(){
+           $('#firstp').css('color','blue');
+       })
+       // change innterHTML
+       $('#html').click(function(){
+        let num= 0;
+        if(num==0){
+          $('#firstp').html('<h1>You changed me</h1>');
+          num=1;
+        }else{
+          $('#firstp').html('<h1>lorem</h1>');
+          num=0;
+        }
+           
+       })
+       $('#addclass').click(function(){
+           $('#firstp').addClass('bg-success');
+       })
+       $('#removeclass').click(function(){
+           $('#firstp').removeClass();
+       })
+       $('#append').click(function(){
+           $('#firstp').append('<h1> world</h1>');
+       })
+       $('#prepend').click(function(){
+           $('#firstp').prepend('<h1>Hello</h1>');
+       })
+      })
+    </script>
+</body>
+</html>
